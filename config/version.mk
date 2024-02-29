@@ -4,6 +4,9 @@ PRODUCT_VERSION_MINOR = 0
 # Increase Arcadia Version with each major release.
 ARCADIA_VERSION := Unleashed
 
+# ArcadiaOS maintainer flags
+ARCADIA_MAINTAINER ?= Unknown
+
 # Internal version
 LINEAGE_VERSION := ArcadiaOS-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d)-$(LINEAGE_BUILD)-v$(ARCADIA_VERSION)
 
