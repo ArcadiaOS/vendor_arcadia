@@ -10,21 +10,20 @@ ARCADIA_MAINTAINER ?= Unknown
 # ArcadiaOS sign
 ARCADIA_BUILD_TYPE ?= Unofficial
 
-ifeq ($(ARCADIA_BUILD_TYPE), Official)
-	OFFICIAL_DEVICES = $(shell cat vendor/lineage/arcadia.devices)
-	FOUND_DEVICE =  $(filter $(LINEAGE_BUILD), $(OFFICIAL_DEVICES))
-	ifeq ($(FOUND_DEVICE),$(LINEAGE_BUILD))
-		ARCADIA_BUILD_TYPE := Official
-	else
-		ARCADIA_BUILD_TYPE := Unofficial
-	endif
+ifeq ($(WITH_GMS), true)
+  ARCADIA_BUILD_VARIANT := Gapps
+else
+  ARCADIA_BUILD_VARIANT := Vanilla
 endif
 
-# Gapps
-ifeq ($(WITH_GMS), true)
-	ARCADIA_BUILD_VARIANT := Gapps
-else
-	ARCADIA_BUILD_VARIANT := Vanilla
+ifeq ($(ARCADIA_BUILD_TYPE), Official)
+  OFFICIAL_DEVICES = $(shell cat vendor/lineage/arcadia.devices)
+  FOUND_DEVICE =  $(filter $(LINEAGE_BUILD), $(OFFICIAL_DEVICES))
+    ifeq ($(FOUND_DEVICE),$(LINEAGE_BUILD))
+      ARCADIA_BUILD_TYPE := Official
+    else
+      ARCADIA_BUILD_TYPE := Unofficial
+    endif
 endif
 
 # Internal version
