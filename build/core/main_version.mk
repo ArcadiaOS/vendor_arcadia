@@ -6,10 +6,12 @@ endif
 
 # ArcadiaOS System Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.arcadia.maintainer=$(ARCADIA_MAINTAINER) \
     ro.arcadia.build.version=$(LINEAGE_VERSION) \
     ro.arcadia.display.version=$(LINEAGE_DISPLAY_VERSION) \
     ro.arcadia.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
+    ro.arcadia.maintainer=$(ARCADIA_MAINTAINER) \
+    ro.arcadia.build.variant=$(ARCADIA_BUILD_VARIANT) \
+    ro.arcadia.release.type=$(ARCADIA_BUILD_TYPE) \
     ro.modversion=$(ARCADIA_VERSION) \
     ro.arcadialegal.url=https://crdroid.net/legal.php
 
