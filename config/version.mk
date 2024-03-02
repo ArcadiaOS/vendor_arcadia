@@ -10,15 +10,18 @@ ARCADIA_MAINTAINER ?= Unknown
 # ArcadiaOS sign
 ARCADIA_BUILD_TYPE ?= Unofficial
 
-ARCADIA_GAPPS := $(WITH_GMS)
+# Gapps
+WITH_GMS := $(ARCADIA_GAPPS)
 
-ifeq ($(WITH_GMS), true)
+ifeq ($(ARCADIA_GAPPS), true)
   $(call inherit-product-if-exists, vendor/google/gms/config.mk)
   $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
   ARCADIA_BUILD_VARIANT := Gapps
 else
   ARCADIA_BUILD_VARIANT := Vanilla
 endif
+
+
 
 ifeq ($(ARCADIA_BUILD_TYPE), Official)
   OFFICIAL_DEVICES = $(shell cat vendor/lineage/arcadia.devices)
