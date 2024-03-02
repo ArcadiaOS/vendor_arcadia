@@ -21,16 +21,9 @@ else
   ARCADIA_BUILD_VARIANT := Vanilla
 endif
 
-
-
-ifeq ($(ARCADIA_BUILD_TYPE), Official)
-  OFFICIAL_DEVICES = $(shell cat vendor/lineage/arcadia.devices)
-  FOUND_DEVICE =  $(filter $(LINEAGE_BUILD), $(OFFICIAL_DEVICES))
-    ifeq ($(FOUND_DEVICE),$(LINEAGE_BUILD))
-      ARCADIA_BUILD_TYPE := Official
-    else
-      ARCADIA_BUILD_TYPE := Unofficial
-    endif
+# Check Official
+ifndef ARCADIA_BUILD_TYPE
+    ARCADIA_BUILD_TYPE := Unofficial
 endif
 
 # Internal version
