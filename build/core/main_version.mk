@@ -13,7 +13,10 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.arcadia.build.variant=$(ARCADIA_BUILD_VARIANT) \
     ro.arcadia.release.type=$(ARCADIA_BUILD_TYPE) \
     ro.modversion=$(ARCADIA_VERSION)|$(ARCADIA_BUILD_TYPE)|$(ARCADIA_BUILD_VARIANT) \
-    ro.arcadialegal.url=https://crdroid.net/legal.php
+    ro.arcadialegal.url=https://crdroid.net/legal.php \
+    ro.arcadia.battery?=$(ARCADIA_BATTERY) \
+    ro.arcadia.chipset?=$(ARCADIA_CHIPSET) \
+    ro.arcadia.display_resolution?=$(ARCADIA_DISPLAY) \
 
 # ArcadiaOS Platform SDK Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
