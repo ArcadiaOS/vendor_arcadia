@@ -17,6 +17,7 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.arcadia.battery?=$(ARCADIA_BATTERY) \
     ro.arcadia.chipset?=$(ARCADIA_CHIPSET) \
     ro.arcadia.display_resolution?=$(ARCADIA_DISPLAY) \
+    ro.arcadia.battery?=$(ARCADIA_BATTERY)
 
 # ArcadiaOS Platform SDK Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
